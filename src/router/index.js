@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 const publiceRoutes = [
   {
     path: '/',
-    redirect: '/login'
+    component: () => import('@/layout/index')
   },
   {
     path: '/login',
