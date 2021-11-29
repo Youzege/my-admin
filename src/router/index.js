@@ -5,6 +5,7 @@ import { createRouter, createWebHashHistory } from 'vue-router'
  */
 const privateRoutes = [
   {
+    name: 'user',
     path: '/user',
     component: layout,
     redirect: '/user/manage',
@@ -56,6 +57,7 @@ const privateRoutes = [
     ]
   },
   {
+    name: 'article',
     path: '/article',
     component: layout,
     redirect: '/article/ranking',
