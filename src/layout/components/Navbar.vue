@@ -7,7 +7,7 @@
 					<el-avatar
 						shape="square"
 						:size="40"
-						:src="$store.getters.userInfo.avatar"
+						:src="'http://nimg.ws.126.net/?url=http://dingyue.ws.126.net/2021/0410/e0c0cd5cj00qrbv4e001md200jg00jgg00960096.jpg&thumbnail=650x2147483647&quality=80&type=jpg'"
 					></el-avatar>
 					<i class="el-icon-s-tools"></i>
 				</div>
