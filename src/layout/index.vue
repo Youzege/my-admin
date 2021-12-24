@@ -44,9 +44,9 @@
 		right: 0;
 		z-index: 9;
 		width: calc(100% - #{$sideBarWidth});
-		transition: width 0.28s;
+		transition: width #{$sideBarDuration};
 	}
 	.hideSidebar .fixed-header {
-		width: calc(100% - #{hideSideBarWidth});
+		width: calc(100% - #{$hideSideBarWidth});
 	}
 </style>
