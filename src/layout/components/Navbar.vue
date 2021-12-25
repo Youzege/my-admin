@@ -3,6 +3,7 @@
 		<hamburger class="hamburger-container" />
 		<breadcrumb class="breadcrumb-container" />
 		<div class="right-menu">
+			<lang-select class="right-menu-item" />
 			<!-- 头像 -->
 			<el-dropdown class="avatar-container" trigger="click">
 				<div class="avatar-wrapper">
@@ -32,9 +33,10 @@
 </template>
 
 <script setup>
+	import Breadcrumb from '@/components/Breadcrumb/index.vue'
 	import Hamburger from '@/components/Hamburger'
+	import LangSelect from '@/components/LangSelect/index.vue'
 	import { useStore } from 'vuex'
-	import Breadcrumb from '../../components/Breadcrumb/index.vue'
 
 	const store = useStore()
 	const logout = () => {
@@ -70,6 +72,18 @@
 			align-items: center;
 			justify-content: right;
 			padding-right: 16px;
+
+			::v-deep .right-menu-item {
+				display: inline-block;
+				padding: 0 18px 0 0;
+				font-size: 24px;
+				color: #5a5e66;
+				vertical-align: text-bottom;
+
+				&.hover-effect {
+					cursor: pointer;
+				}
+			}
 
 			::v-deep .avatar-container {
 				cursor: pointer;
