@@ -2,7 +2,7 @@
 	<div>
 		<div class="logo-container">
 			<el-avatar
-				size="44"
+				:size="logoHeight"
 				shape="square"
 				src="http://nimg.ws.126.net/?url=http://dingyue.ws.126.net/2021/0410/e0c0cd5cj00qrbv4e001md200jg00jgg00960096.jpg&thumbnail=650x2147483647&quality=80&type=jpg"
 			/>
@@ -17,11 +17,14 @@
 <script setup>
 	import {} from 'vue'
 	import SidebarMenu from './SidebarMenu.vue'
+
+	// 组件状态驱动动态的CSS值
+	const logoHeight = 44
 </script>
 
 <style lang='scss' scoped>
 	.logo-container {
-		height: 44px;
+		height: v-bind(logoHeight) + 'px';
 		padding: 10px 0 22px 0;
 		display: flex;
 		align-items: center;
