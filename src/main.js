@@ -1,3 +1,4 @@
+import i18n from '@/i18n'
 import installIcons from '@/icons'
 import '@/styles/index.scss'
 import { createApp } from 'vue'
@@ -10,4 +11,5 @@ import store from './store'
 const app = createApp(App)
 installElementPlus(app)
 installIcons(app)
-app.use(store).use(router).mount('#app')
+
+app.use(store).use(router).use(i18n).mount('#app')
