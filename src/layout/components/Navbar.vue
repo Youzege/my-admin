@@ -70,7 +70,7 @@
 		.right-menu {
 			display: flex;
 			align-items: center;
-			justify-content: right;
+			float: right;
 			padding-right: 16px;
 
 			::v-deep .right-menu-item {
