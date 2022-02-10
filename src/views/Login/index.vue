@@ -54,10 +54,12 @@
 
 <script setup>
 import LangSelect from '@/components/LangSelect/index.vue'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from 'vuex'
 import { validatePassword } from './rules'
+import { watchSwitchLang } from '@/utils/i18n'
+
 // 数据源
 const loginForm = ref({
   username: 'super-admin',
@@ -70,7 +72,9 @@ const loginRules = ref({
     {
       required: true,
       trigger: 'blur',
-      message: i18n.t('msg.login.usernameRule')
+      message: computed(() => {
+        return i18n.t('msg.login.usernameRule')
+      })
     }
   ],
   password: [
@@ -93,6 +97,9 @@ const onChangePwdType = () => {
 // 登录动作处理
 const loading = ref(false)
 const loginFormRef = ref(null)
+watchSwitchLang(() => {
+  loginFormRef.value.validate()
+})
 const store = useStore()
 const handleLogin = () => {
   loginFormRef.value.validate((valid) => {
