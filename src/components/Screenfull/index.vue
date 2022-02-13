@@ -1,0 +1,40 @@
+<template>
+  <div>
+    <el-tooltip :content="$t('msg.navBar.screenfull')">
+      <svg-icon
+        :icon="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
+        @click="onToggle"
+      />
+    </el-tooltip>
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+import screenfull from 'screenfull'
+
+// 是否全屏 ?
+const isFullscreen = ref(false)
+
+// 监听全屏变化
+const change = () => {
+  isFullscreen.value = screenfull.isFullscreen
+}
+
+// 切换屏幕事件
+const onToggle = () => {
+  screenfull.toggle()
+}
+
+// 设置侦听器
+onMounted(() => {
+  screenfull.on('change', change)
+})
+
+// 删除侦听器
+onUnmounted(() => {
+  screenfull.off('change', change)
+})
+</script>
+
+<style lang="scss" scoped></style>
