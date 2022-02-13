@@ -2,7 +2,7 @@
   <div>
     <transition name="el-fade-in">
       <div class="logo-container">
-        <el-avatar :size="logoHeight" shape="square" :src="imgUrl" />
+        <el-avatar :size="logoHeight" shape="circle" :src="imgUrl" />
         <h1 class="logo-title" v-if="$store.getters.sidebarOpened">my-admin</h1>
       </div>
     </transition>
@@ -15,7 +15,7 @@
 <script setup>
 import { ref } from 'vue'
 import SidebarMenu from './SidebarMenu.vue'
-import cat from './../../../assets/cat.jpg'
+import cat from './../../../assets/cat.png'
 
 // 组件状态驱动动态的CSS值
 const logoHeight = 44
