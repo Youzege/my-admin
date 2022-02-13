@@ -16,7 +16,7 @@
 
 ```
 # 克隆项目
-git clone https://github.com/jzfai/vue3-admin-plus.git
+git clone https://github.com/Youzege/my-admin
 ```
 
 
