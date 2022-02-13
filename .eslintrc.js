@@ -13,6 +13,7 @@ module.exports = {
     'space-before-function-paren': 'off',
     'no-tabs': 'off',
     'no-mixed-spaces-and-tabs': 'off',
+    'no-useless-return': 0,
     indent: ['off', 2]
   }
 }
