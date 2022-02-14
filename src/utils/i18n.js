@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { watch } from 'vue'
 import store from '@/store'
 import i18n from '@/i18n'
 export function generateTitle(title) {
@@ -10,7 +10,7 @@ export function generateTitle(title) {
  * @param  {...any} cbs 所有的回调
  */
 export function watchSwitchLang(...cbs) {
-  computed(
+  watch(
     () => store.getters.language,
     () => {
       cbs.forEach((cb) => cb(store.getters.language))
