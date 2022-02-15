@@ -6,10 +6,27 @@
 .breadcrumb-enter-from,
 .breadcrumb-leave-active {
   opacity: 0;
-  
+
   transform: translateX(20px);
 }
 
 .breadcrumb-leave-active {
   position: absolute;
+}
+
+// tagview 过渡
+.fade-transform-enter-active,
+.fade-transform-leave-active {
+  transition: all 0.4s;
+}
+
+.fade-transform-enter-from,
+.fade-transform-leave-active {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
