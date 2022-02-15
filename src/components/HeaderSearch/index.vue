@@ -2,6 +2,7 @@
   <div :class="{ show: isShow }" class="header-search">
     <el-tooltip :content="$t('msg.navBar.headerSearch')"
       ><svg-icon
+        id="guide-search"
         class-name="search-icon"
         icon="search"
         @click.stop="onShowClick"

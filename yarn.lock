@@ -4034,6 +4034,11 @@
   "resolved" "https://registry.nlark.com/dotenv/download/dotenv-8.6.0.tgz?cache=0&sync_timestamp=1621628681571&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdotenv%2Fdownload%2Fdotenv-8.6.0.tgz"
   "version" "8.6.0"
 
+"driver.js@^0.9.8":
+  "integrity" "sha512-bczjyKdX6XmFyCDkwtRmlaORDwfBk1xXmRO0CAe5VwNQTM98aWaG2LAIiIdTe53iV/B7W5lXlIy2xYtf0JRb7Q=="
+  "resolved" "https://registry.npmmirror.com/driver.js/-/driver.js-0.9.8.tgz"
+  "version" "0.9.8"
+
 "duplexer@^0.1.1":
   "integrity" "sha1-Or5DrvODX4rgd9E23c4PJ2sEAOY="
   "resolved" "https://registry.npm.taobao.org/duplexer/download/duplexer-0.1.2.tgz"
