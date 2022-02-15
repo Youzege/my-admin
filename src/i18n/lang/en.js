@@ -84,17 +84,17 @@ export default {
   },
   profile: {
     muted:
-      '"Vue3 rewrite vue-element-admin, realize the back-end front-end integrated solution" project demonstration',
+      'A general background project practice of simulating vue-element-admin',
     introduce: 'Introduce',
     projectIntroduction: 'Project Introduction',
     projectFunction: 'Project Function',
     feature: 'Feature',
     chapter: 'Chapter',
     author: 'Author',
-    name: 'Sunday',
-    job: 'A front-end development program',
+    name: '@youzege',
+    job: 'A front-end developer & GIS development programmer',
     Introduction:
-      'A senior technical expert, once worked in a domestic first-line Internet company, and has coordinated multiple large-scale projects with more than tens of millions of users. Committed to researching big front-end technology, he has been invited to participate in domestic front-end technology sharing sessions many times, such as: Google China Technology Sharing Session in 2018.'
+      'A Giser~, who wants to engage in front-end development and also wants to develop the GIS industry continues to learn about front-end-GIS visualization...'
   },
   userInfo: {
     print: 'Print',
