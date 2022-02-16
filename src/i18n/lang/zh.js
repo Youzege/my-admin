@@ -90,7 +90,7 @@ export default {
     feature: '功能',
     chapter: '章节',
     author: '作者',
-    name: '@youzege',
+    name: 'youzege',
     job: '一个前端开发&GIS开发程序员',
     Introduction:
       '一个想从事前端开发, 且还想GIS行业发展的Giser~, 继续学习前端&GIS可视化方面的知识...'

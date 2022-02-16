@@ -91,7 +91,7 @@ export default {
     feature: 'Feature',
     chapter: 'Chapter',
     author: 'Author',
-    name: '@youzege',
+    name: 'youzege',
     job: 'A front-end developer & GIS development programmer',
     Introduction:
       'A Giser~, who wants to engage in front-end development and also wants to develop the GIS industry continues to learn about front-end-GIS visualization...'
