@@ -4851,6 +4851,11 @@
     "loader-utils" "^1.2.3"
     "schema-utils" "^2.5.0"
 
+"file-saver@^2.0.5":
+  "integrity" "sha512-P9bmyZ3h/PRG+Nzga+rbdI4OEpNDzAVyy74uVO9ATgzLK6VtAsYybF/+TOCvrc0MO793d6+42lLyZTw7/ArVzA=="
+  "resolved" "https://registry.npmmirror.com/file-saver/-/file-saver-2.0.5.tgz"
+  "version" "2.0.5"
+
 "filesize@^3.6.1":
   "integrity" "sha1-CQuz7gG2+AGoqL6Z0xcQs0Irsxc="
   "resolved" "https://registry.npmmirror.com/filesize/download/filesize-3.6.1.tgz?cache=0&sync_timestamp=1635763993879&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Ffilesize%2Fdownload%2Ffilesize-3.6.1.tgz"
