@@ -49,7 +49,7 @@
           width="260"
         >
           <template #default="{row}">
-            <el-button type="primary" size="mini">{{
+            <el-button type="primary" size="mini" @click="onShowClick(row._id)">{{
               $t('msg.excel.show')
             }}</el-button>
             <el-button type="info" size="mini">{{
@@ -146,6 +146,13 @@ const onRemoveClick = row => {
     // 重新渲染数据
     getListData()
   })
+}
+
+/**
+ * 查看按钮点击事件
+ */
+const onShowClick = id => {
+  router.push(`/user/info/${id}`)
 }
 
 const router = useRouter()
