@@ -1,15 +1,15 @@
-import App from './App.vue'
-import { createApp } from 'vue'
-import router from './router'
-import store from './store'
-import i18n from '@/i18n'
-import './permission'
-import '@/styles/index.scss'
-import installIcons from '@/icons'
-import installElementPlus from './plugins/element'
 import installDirective from '@/directives'
 // 全局属性
 import installFilter from '@/filters'
+import i18n from '@/i18n'
+import installIcons from '@/icons'
+import '@/styles/index.scss'
+import { createApp } from 'vue'
+import App from './App.vue'
+import './permission'
+import installElementPlus from './plugins/element'
+import router from './router'
+import store from './store'
 
 const app = createApp(App)
 installElementPlus(app)
