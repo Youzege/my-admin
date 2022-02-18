@@ -66,7 +66,6 @@ const treeRef = ref(null)
 const getRolePermission = async () => {
   const checkedKeys = await rolePermission(props.roleId)
   treeRef.value.setCheckedKeys(checkedKeys)
-  console.log(treeRef.value)
 }
 
 watch(

@@ -59,6 +59,12 @@ export default {
         )
       }
       setItem(TAGS_VIEW, state.tagsViewList)
+    },
+    /**
+     * 初始化 tagsList
+     */
+     initTagsViewList(state) {
+      state.tagsViewList = []
     }
   },
   actions: {}

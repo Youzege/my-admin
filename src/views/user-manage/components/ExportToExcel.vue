@@ -88,7 +88,6 @@ const formatJson = (headers, rows) => {
       }
       // 时间处理
       if (headers[key] === 'openTime') {
-        console.log(item)
         return dateFormat(item[headers[key]])
       }
       return item[headers[key]]
