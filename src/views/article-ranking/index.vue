@@ -51,10 +51,12 @@
 </template>
 
 <script setup>
-import { ref, onActivated } from 'vue'
+import { ref, onActivated, onMounted, watch } from 'vue'
 import { getArticleList } from '@/api/article'
 import { watchSwitchLang } from '@/utils/i18n'
 import { dynamicData, selectDynamicLabel, tableColumns } from './dynamic'
+import { tableRef, initSortable } from './sortable'
+import { useStore } from 'vuex'
 
 // 数据相关
 const tableData = ref([])
@@ -77,6 +79,11 @@ watchSwitchLang(getListData)
 // 处理数据不重新加载的问题
 onActivated(getListData)
 
+// 初始化拖拽
+onMounted(() => {
+  initSortable(tableData, getListData)
+})
+
 /**
  * size 改变触发
  */
@@ -92,6 +99,23 @@ const handleCurrentChange = currentPage => {
   page.value = currentPage
   getListData()
 }
+
+// color
+const store = useStore()
+const bgColor = ref('')
+const setSortbleColor = () => {
+  bgColor.value = store.getters.mainColor
+}
+watch(
+  () => store.getters.mainColor,
+  () => {
+  setSortbleColor()
+},
+{
+  immediate: true
+}
+)
+
 </script>
 
 <style lang="scss" scoped>
@@ -117,5 +141,10 @@ const handleCurrentChange = currentPage => {
     margin-top: 20px;
     text-align: center;
   }
+}
+::v-deep .sortable-ghost {
+  opacity: 0.6;
+  color: #fff !important;
+  background: v-bind(bgColor) !important;
 }
 </style>
