@@ -52,11 +52,14 @@
 
 <script setup>
 import { ref, onActivated, onMounted, watch } from 'vue'
-import { getArticleList } from '@/api/article'
+import { getArticleList, deleteArticle } from '@/api/article'
 import { watchSwitchLang } from '@/utils/i18n'
 import { dynamicData, selectDynamicLabel, tableColumns } from './dynamic'
 import { tableRef, initSortable } from './sortable'
 import { useStore } from 'vuex'
+import { useI18n } from 'vue-i18n'
+import { ElMessage, ElMessageBox } from 'element-plus'
+import { useRouter } from 'vue-router'
 
 // 数据相关
 const tableData = ref([])
@@ -98,6 +101,32 @@ const handleSizeChange = currentSize => {
 const handleCurrentChange = currentPage => {
   page.value = currentPage
   getListData()
+}
+
+// 删除用户
+const i18n = useI18n()
+const onRemoveClick = row => {
+  ElMessageBox.confirm(
+    i18n.t('msg.article.dialogTitle1') +
+      row.title +
+      i18n.t('msg.article.dialogTitle2'),
+    {
+      type: 'warning'
+    }
+  ).then(async () => {
+    await deleteArticle(row._id)
+    ElMessage.success(i18n.t('msg.article.removeSuccess'))
+    // 重新渲染数据
+    getListData()
+  })
+}
+
+/**
+ * 查看按钮点击事件
+ */
+const router = useRouter()
+const onShowClick = row => {
+  router.push(`/article/${row._id}`)
 }
 
 // color
