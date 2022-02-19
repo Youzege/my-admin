@@ -107,7 +107,7 @@ const getListData = async () => {
   tableData.value = result.list
   total.value = result.total
 }
-getListData()
+// getListData()
 // 导入用户数据后重新激活keep-alive
 onActivated(getListData)
 // 监听语言切换
