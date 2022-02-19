@@ -1,6 +1,6 @@
+import i18n from '@/i18n'
 // 全局属性
 import installFilter from '@/filters'
-import i18n from '@/i18n'
 import installIcons from '@/icons'
 import '@/styles/index.scss'
 import { createApp } from 'vue'
@@ -17,4 +17,4 @@ installIcons(app)
 installFilter(app)
 installDirective(app)
 
-app.use(store).use(router).use(i18n).mount('#app')
+app.use(i18n).use(store).use(router).mount('#app')
