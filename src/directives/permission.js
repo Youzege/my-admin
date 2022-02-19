@@ -5,7 +5,6 @@ function checkPermission(el, binding) {
   const { value } = binding
   // 获取所有的功能指令
   const points = store.getters.userInfo.permission.points
-  console.log(points)
   // 当传入的指令集为数组时
   if (value && value instanceof Array) {
     // 匹配对应的指令

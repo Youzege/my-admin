@@ -37,7 +37,7 @@ const allRoles = ref([])
 const getRoleList = async () => {
   allRoles.value = await roleList()
 }
-// getRoleList()
+getRoleList()
 watchSwitchLang(getRoleList)
 
 /**
