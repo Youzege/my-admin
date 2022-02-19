@@ -872,7 +872,15 @@
     "@babel/types" "^7.4.4"
     "esutils" "^2.0.2"
 
-"@babel/runtime@^7.11.0", "@babel/runtime@^7.8.4":
+"@babel/runtime-corejs3@^7.11.2":
+  "integrity" "sha512-NcKtr2epxfIrNM4VOmPKO46TvDMCBhgi2CrSHaEarrz+Plk2K5r9QemmOFTGpZaoKnWoGH5MO+CzeRsih/Fcgg=="
+  "resolved" "https://registry.npmmirror.com/@babel/runtime-corejs3/-/runtime-corejs3-7.17.2.tgz"
+  "version" "7.17.2"
+  dependencies:
+    "core-js-pure" "^3.20.2"
+    "regenerator-runtime" "^0.13.4"
+
+"@babel/runtime@^7.11.0", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.8.4":
   "integrity" "sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ=="
   "resolved" "https://registry.npmmirror.com/@babel/runtime/download/@babel/runtime-7.16.3.tgz?cache=0&sync_timestamp=1636495059115&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.16.3.tgz"
   "version" "7.16.3"
@@ -3384,6 +3392,11 @@
     "browserslist" "^4.17.6"
     "semver" "7.0.0"
 
+"core-js-pure@^3.20.2":
+  "integrity" "sha512-12VZfFIu+wyVbBebyHmRTuEE/tZrB4tJToWcwAMcsp3h4+sHR+fMJWbKpYiCRWlhFBq+KNyO8rIV9rTkeVmznQ=="
+  "resolved" "https://registry.npmmirror.com/core-js-pure/-/core-js-pure-3.21.1.tgz"
+  "version" "3.21.1"
+
 "core-js@^3.6.5":
   "integrity" "sha1-9vFzyuI+c6fYj6I7bp2jKSdsZkE="
   "resolved" "https://registry.npmmirror.com/core-js/download/core-js-3.19.1.tgz"
@@ -5672,6 +5685,13 @@
   "integrity" "sha1-V59BgLXaRSAmPocTzIMpQrSOHxw="
   "resolved" "https://registry.npmmirror.com/husky/download/husky-7.0.1.tgz"
   "version" "7.0.1"
+
+"i18next@^20.4.0":
+  "integrity" "sha512-89iWWJudmaHJwzIdJ/1eu98GtsJnwBhOUWwlAre70itPMuTE/NTPtgVeaS1CGaB8Q3XrYBGpEqlq4jsScDx9kg=="
+  "resolved" "https://registry.npmmirror.com/i18next/-/i18next-20.4.0.tgz"
+  "version" "20.4.0"
+  dependencies:
+    "@babel/runtime" "^7.12.0"
 
 "iconv-lite@^0.4.24", "iconv-lite@0.4.24":
   "integrity" "sha1-ICK0sl+93CHS9SSXSkdKr+czkIs="
@@ -10129,6 +10149,11 @@
   "resolved" "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
+"tslib@^2.1.0":
+  "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
+  "resolved" "https://registry.npmmirror.com/tslib/-/tslib-2.3.1.tgz"
+  "version" "2.3.1"
+
 "tty-browserify@0.0.0":
   "integrity" "sha1-oVe6QC2iTpv5V/mqadUk7tQpAaY="
   "resolved" "https://registry.npm.taobao.org/tty-browserify/download/tty-browserify-0.0.0.tgz"
@@ -10554,6 +10579,15 @@
   "integrity" "sha512-tOhfEwEzFLJzf6d1ZPkYfGj+FWhIpBux9ppoP3rlclw3Z0BZv3N7b7030Z1kYth+6rDuAsXUFr+d0VE6Ed1ikw=="
   "resolved" "https://registry.npmmirror.com/w3c-keyname/-/w3c-keyname-2.2.4.tgz"
   "version" "2.2.4"
+
+"wangeditor@^4.7.6":
+  "integrity" "sha512-8mOrYG8hDW0ZUhJqPpPGeav90RwZRHIPQolHVjdyQ6jitSmlCTzc67vLz8X5bXocriGOAaVIPiphAD+5wDNwBg=="
+  "resolved" "https://registry.npmmirror.com/wangeditor/-/wangeditor-4.7.6.tgz"
+  "version" "4.7.6"
+  dependencies:
+    "@babel/runtime" "^7.11.2"
+    "@babel/runtime-corejs3" "^7.11.2"
+    "tslib" "^2.1.0"
 
 "watchpack-chokidar2@^2.0.1":
   "integrity" "sha1-OFAAcu5uzmbzdpk2lQ6hdxvhyVc="
