@@ -1,7 +1,9 @@
 <template>
   <div class="user-info-container">
     <el-card class="print-box">
-      <el-button type="primary" v-print="printObj" :loading="printLoading">{{ $t('msg.userInfo.print') }}</el-button>
+      <el-button type="primary" v-print="printObj" :loading="printLoading">{{
+        $t('msg.userInfo.print')
+      }}</el-button>
     </el-card>
     <el-card>
       <div class="user-info-box" id="userInfoBox">
@@ -98,6 +100,27 @@ const props = defineProps({
 const detailData = ref({})
 const getUserDetail = async () => {
   detailData.value = await userDetail(props.id)
+  if (
+    detailData.value.username === 'super-admin' ||
+    detailData.value.username === 'admin' ||
+    detailData.value.username === 'test'
+  ) {
+    console.log(detailData.value)
+
+    if (detailData.value.username === 'super-admin') {
+      detailData.value.avatar =
+        'https://img1.baidu.com/it/u=1822384944,1157459425&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400'
+    } else if (detailData.value.username === 'admin') {
+      detailData.value.avatar =
+        'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fa2%2F20%2F77%2Fa22077cf0c937330544a02ea28c75fa3.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647934677&t=39a7baf06dbe9e0d6112303e4a93fc5f'
+    }
+    detailData.value.experience[0].title = 'github'
+    detailData.value.experience[0].desc = '超好玩的APP'
+    detailData.value.experience[1].title = 'github'
+    detailData.value.experience[1].desc = 'WebGIS应用平台'
+    detailData.value.major = '前端架构师'
+    detailData.value.glory = '经常出没在深夜的前端！！'
+  }
 }
 getUserDetail()
 

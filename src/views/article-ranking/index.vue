@@ -1,6 +1,6 @@
 <template>
   <div class="article-ranking-container">
-     <el-card class="header">
+    <el-card class="header">
       <div class="dynamic-box">
         <span class="title">{{ $t('msg.article.dynamicTitle') }}</span>
         <el-checkbox-group v-model="selectDynamicLabel">
@@ -66,13 +66,17 @@ const tableData = ref([])
 const total = ref(0)
 const page = ref(1)
 const size = ref(10)
-
+const resultList = ref([])
 // 获取数据的方法
 const getListData = async () => {
   const result = await getArticleList({
     page: page.value,
     size: size.value
   })
+  resultList.value = result.list.map((item) => {
+    item.author = 'youzege'
+  })
+  console.log(result.list)
   tableData.value = result.list
   total.value = result.total
 }
@@ -90,7 +94,7 @@ onMounted(() => {
 /**
  * size 改变触发
  */
-const handleSizeChange = currentSize => {
+const handleSizeChange = (currentSize) => {
   size.value = currentSize
   getListData()
 }
@@ -98,14 +102,14 @@ const handleSizeChange = currentSize => {
 /**
  * 页码改变触发
  */
-const handleCurrentChange = currentPage => {
+const handleCurrentChange = (currentPage) => {
   page.value = currentPage
   getListData()
 }
 
 // 删除用户
 const i18n = useI18n()
-const onRemoveClick = row => {
+const onRemoveClick = (row) => {
   ElMessageBox.confirm(
     i18n.t('msg.article.dialogTitle1') +
       row.title +
@@ -125,7 +129,7 @@ const onRemoveClick = row => {
  * 查看按钮点击事件
  */
 const router = useRouter()
-const onShowClick = row => {
+const onShowClick = (row) => {
   router.push(`/article/${row._id}`)
 }
 
@@ -138,13 +142,12 @@ const setSortbleColor = () => {
 watch(
   () => store.getters.mainColor,
   () => {
-  setSortbleColor()
-},
-{
-  immediate: true
-}
+    setSortbleColor()
+  },
+  {
+    immediate: true
+  }
 )
-
 </script>
 
 <style lang="scss" scoped>

@@ -21,6 +21,15 @@ const chapterData = ref([])
 
 const getChapterData = async () => {
   chapterData.value = await chapter()
+  chapterData.value.forEach((item) => {
+    if (item.content === '课程导读') {
+      item.content = '学习经典的后台框架'
+    }
+    if (item.content === '课程总结') {
+      item.content = '完成基础内容，往后继续添加新功能'
+    }
+  })
+  console.log(chapterData.value)
 }
 getChapterData()
 

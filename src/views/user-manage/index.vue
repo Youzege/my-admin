@@ -2,7 +2,11 @@
   <div class="user-manage-container">
     <el-card class="header">
       <div>
-        <el-button type="primary" @click="onImportExcelClick" v-permission="['importUser']">
+        <el-button
+          type="primary"
+          @click="onImportExcelClick"
+          v-permission="['importUser']"
+        >
           {{ $t('msg.excel.importExcel') }}</el-button
         >
         <el-button type="success" @click="onToExcelClick">
@@ -48,14 +52,21 @@
           fixed="right"
           width="260"
         >
-          <template #default="{row}">
-            <el-button type="primary" size="mini" @click="onShowClick(row._id)">{{
-              $t('msg.excel.show')
-            }}</el-button>
-            <el-button type="info" size="mini" @click="onShowRoleClick(row)" v-permission="['distributeRole']">{{
-              $t('msg.excel.showRole')
-            }}</el-button>
-             <el-button
+          <template #default="{ row }">
+            <el-button
+              type="primary"
+              size="mini"
+              @click="onShowClick(row._id)"
+              >{{ $t('msg.excel.show') }}</el-button
+            >
+            <el-button
+              type="info"
+              size="mini"
+              @click="onShowRoleClick(row)"
+              v-permission="['distributeRole']"
+              >{{ $t('msg.excel.showRole') }}</el-button
+            >
+            <el-button
               type="danger"
               size="mini"
               @click="onRemoveClick(row)"
@@ -79,7 +90,11 @@
       </el-pagination>
     </el-card>
     <export-to-excel v-model="exportToExcelVisible"></export-to-excel>
-    <roles-dialog v-model="roleDialogVisible" :userId="selectUserId" @updateRole="getListData"></roles-dialog>
+    <roles-dialog
+      v-model="roleDialogVisible"
+      :userId="selectUserId"
+      @updateRole="getListData"
+    ></roles-dialog>
   </div>
 </template>
 
@@ -98,12 +113,20 @@ const tableData = ref([])
 const total = ref(0)
 const page = ref(1)
 const size = ref(2)
+const resultList = ref([])
 // 获取数据的方法
 const getListData = async () => {
   const result = await getUserManageList({
     page: page.value,
     size: size.value
   })
+  if (result.list[0].username === 'super-admin') {
+    resultList.value = result.list
+    resultList.value[0].avatar =
+      'https://img1.baidu.com/it/u=1822384944,1157459425&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400'
+    resultList.value[1].avatar =
+      'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fup.enterdesk.com%2Fedpic%2Fa2%2F20%2F77%2Fa22077cf0c937330544a02ea28c75fa3.jpg&refer=http%3A%2F%2Fup.enterdesk.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1647934677&t=39a7baf06dbe9e0d6112303e4a93fc5f'
+  }
   tableData.value = result.list
   total.value = result.total
 }
@@ -134,7 +157,7 @@ const handleCurrentChange = (currentPage) => {
  * 删除按钮点击事件
  */
 const i18n = useI18n()
-const onRemoveClick = row => {
+const onRemoveClick = (row) => {
   ElMessageBox.confirm(
     i18n.t('msg.excel.dialogTitle1') +
       row.username +
@@ -153,7 +176,7 @@ const onRemoveClick = row => {
 /**
  * 查看按钮点击事件
  */
-const onShowClick = id => {
+const onShowClick = (id) => {
   router.push(`/user/info/${id}`)
 }
 
@@ -179,16 +202,15 @@ const onToExcelClick = () => {
  */
 const roleDialogVisible = ref(false)
 const selectUserId = ref('')
-const onShowRoleClick = row => {
+const onShowRoleClick = (row) => {
   roleDialogVisible.value = true
   selectUserId.value = row._id
 }
 
 // 保证每次打开重新获取用户角色数据
-watch(roleDialogVisible, val => {
+watch(roleDialogVisible, (val) => {
   if (!val) selectUserId.value = ''
 })
-
 </script>
 
 <style lang="scss" scoped>
