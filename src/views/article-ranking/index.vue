@@ -76,7 +76,6 @@ const getListData = async () => {
   resultList.value = result.list.map((item) => {
     item.author = 'youzege'
   })
-  console.log(result.list)
   tableData.value = result.list
   total.value = result.total
 }
