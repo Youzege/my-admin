@@ -29,7 +29,6 @@ const getChapterData = async () => {
       item.content = '完成基础内容，往后继续添加新功能'
     }
   })
-  console.log(chapterData.value)
 }
 getChapterData()
 
