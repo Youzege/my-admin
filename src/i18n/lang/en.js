@@ -30,7 +30,9 @@ export default {
     articleRanking: 'ArticleRanking',
     articleCreate: 'ArticleCreate',
     articleDetail: 'ArticleDetail',
-    articleEditor: 'ArticleEditor'
+    articleEditor: 'ArticleEditor',
+    echart: 'echart',
+    chartMovie: 'MovieRanking'
   },
   toast: {
     switchLangSuccess: 'Switch Language Success'

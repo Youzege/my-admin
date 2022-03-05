@@ -6,10 +6,12 @@ import ArticleCreaterRouter from './modules/ArticleCreate'
 import PermissionListRouter from './modules/PermissionList'
 import RoleListRouter from './modules/RoleList'
 import UserManageRouter from './modules/UserManage'
+import Echarts from './modules/Echarts'
 /**
  * 私有路由表
  */
 export const privateRoutes = [
+  Echarts,
   UserManageRouter,
   RoleListRouter,
   PermissionListRouter,
