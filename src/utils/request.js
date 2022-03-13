@@ -20,7 +20,7 @@ service.interceptors.request.use(
       // 如果token存在 注入token
       config.headers.Authorization = `Bearer ${store.getters.token}`
     }
-    config.headers.icode = '76A496424136488C'
+    config.headers.icode = 'FD33B65CA34D1821'
     config.headers['Accept-Language'] = store.getters.language
     return config // 必须返回配置
   },
