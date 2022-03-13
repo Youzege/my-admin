@@ -105,8 +105,6 @@ const getUserDetail = async () => {
     detailData.value.username === 'admin' ||
     detailData.value.username === 'test'
   ) {
-    console.log(detailData.value)
-
     if (detailData.value.username === 'super-admin') {
       detailData.value.avatar =
         'https://img1.baidu.com/it/u=1822384944,1157459425&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400'
